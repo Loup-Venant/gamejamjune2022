@@ -25,9 +25,8 @@ namespace Gameplay.Runtime
         private void Start()
         {
             Initialize();
-            Map.NumberOfLanes = 3;
 
-            _map = new Map();
+            _map = GetComponent<MockMapGenerator>().m_map;
 
             GetNextMapEntity();
         }

@@ -23,13 +23,17 @@ namespace Gameplay.Logic
     public Map()
     {
       m_Lanes = new Dictionary<int, MapEntity>[NumberOfLanes];
+      for (int i = 0; i < NumberOfLanes; i++)
+      {
+        m_Lanes[i] = new Dictionary<int, MapEntity>();
+      }
       m_History = new Dictionary<int, Decision>();
     }
     public void AddEntities(List<MapEntity> entities)
     {
       foreach (var entity in entities)
       {
-        if (entity.m_LaneId >= 0 && entity.m_LaneId <= m_Lanes.Length && !m_Lanes[entity.m_LaneId].ContainsKey(entity.m_Position))
+        if (entity.m_LaneId >= 0 && entity.m_LaneId < m_Lanes.Length && !m_Lanes[entity.m_LaneId].ContainsKey(entity.m_Position))
           m_Lanes[entity.m_LaneId].Add(entity.m_Position, entity);
       }
     }
