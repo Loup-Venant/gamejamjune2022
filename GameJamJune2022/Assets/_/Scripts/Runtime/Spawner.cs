@@ -25,12 +25,13 @@ namespace Gameplay.Runtime
         private void Start()
         {
             _elapsedTime = 0f;
+            GetNextMapEntity();
             Spawn();
         }
 
         private void Update()
         {
-            GetNextMapEntity();
+            
             _elapsedTime += Time.deltaTime;
             if (_elapsedTime >= _nextEntitySpawnTime * _spawnSpeed)
             {
@@ -46,6 +47,7 @@ namespace Gameplay.Runtime
 
         #endregion
 
+
         #region Main
 
         private void Spawn()
@@ -53,12 +55,16 @@ namespace Gameplay.Runtime
             
             for(int i = 0; i < _spawnPositions.Length; i++)
             {
-
-                var mapEntity = Instantiate(Resources.Load<GameObject>("Prefabs/MapEntity/" + _mapEntities[i].ToString()), _spawnPositions[i].position, Quaternion.identity);
+                if(_mapEntities[i] != null)
+                {
+                    var mapEntity = Instantiate(Resources.Load<GameObject>("Prefabs/MapEntity/" + _mapEntities[i].ToString()), _spawnPositions[i].position, Quaternion.identity);
+                }
             }
+            GetNextMapEntity();
         }
 
         #endregion
+
 
         #region Hidden
         private float _elapsedTime;
