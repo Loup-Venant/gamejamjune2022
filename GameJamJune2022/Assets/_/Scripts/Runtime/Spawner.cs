@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Gameplay.Logic;
 
 namespace Gameplay.Runtime
 {
@@ -23,16 +25,23 @@ namespace Gameplay.Runtime
         private void Start()
         {
             _elapsedTime = 0f;
+            Spawn();
         }
 
         private void Update()
         {
+            GetNextMapEntity();
             _elapsedTime += Time.deltaTime;
-            if (_elapsedTime >= _spawnSpeed)
+            if (_elapsedTime >= _nextEntitySpawnTime * _spawnSpeed)
             {
                 _elapsedTime = 0f;
                 Spawn();
             }
+        }
+
+        private void GetNextMapEntity()
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
@@ -44,7 +53,8 @@ namespace Gameplay.Runtime
             
             for(int i = 0; i < _spawnPositions.Length; i++)
             {
-                var mapEntity = Instantiate(Resources.Load<GameObject>("Prefabs/MapEntity"), _spawnPositions[i].position, Quaternion.identity);
+
+                var mapEntity = Instantiate(Resources.Load<GameObject>("Prefabs/MapEntity/" + _mapEntities[i].ToString()), _spawnPositions[i].position, Quaternion.identity);
             }
         }
 
@@ -52,6 +62,9 @@ namespace Gameplay.Runtime
 
         #region Hidden
         private float _elapsedTime;
+        private float _nextEntitySpawnTime;
+
+        private MapEntity[] _mapEntities = new MapEntity[Map.NumberOfLanes];
 
         #endregion
     }
