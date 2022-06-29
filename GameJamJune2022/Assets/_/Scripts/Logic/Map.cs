@@ -47,14 +47,25 @@ namespace Gameplay.Logic
     {
       m_History.Add(pos, decision);
     }
+    public MapEntity[] GetEntitiesAtPosition(int position)
+    {
+      var retVal = new MapEntity[NumberOfLanes];
+      for (int i = 0; i < NumberOfLanes; i++)
+      {
+        if(m_Lanes[i].ContainsKey(position))
+          retVal[i] = m_Lanes[i][position];
+      }
+      return retVal;
+    }
   }
   public class MapNode
   {
     private List<MapEntity> _mapEntities;
     private List<ICondition> _availabilityConditions;
-    public MapNode(List<MapEntity> entities)
+    public MapNode(List<MapEntity> entities, List<ICondition> conditions)
     {
       _mapEntities = entities;
+      _availabilityConditions = conditions;
     }
   }
   public interface ICondition
