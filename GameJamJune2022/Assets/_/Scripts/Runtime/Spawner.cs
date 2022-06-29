@@ -24,40 +24,54 @@ namespace Gameplay.Runtime
 
         private void Start()
         {
-            _elapsedTime = 0f;
+            Initialize();
+            Map.NumberOfLanes = 3;
+
+            _map = new Map();
+
             GetNextMapEntity();
-            Spawn();
+        }
+
+        private void Initialize()
+        {
+            _elapsedTime = 0f;
+            _currentMapEntityIndex = 0;
         }
 
         private void Update()
         {
-            
+            SpawnOnTime();
+        }
+        
+        #endregion
+
+
+        #region Main
+        private void SpawnOnTime()
+        {
             _elapsedTime += Time.deltaTime;
-            if (_elapsedTime >= _nextEntitySpawnTime * _spawnSpeed)
+            if (_elapsedTime >= _spawnSpeed)
             {
                 _elapsedTime = 0f;
+                _currentMapEntityIndex++;
                 Spawn();
             }
         }
 
         private void GetNextMapEntity()
         {
-            throw new NotImplementedException();
+            // _mapEntities = _map.GetEntitiesAtPosition(_currentMapEntityIndex);
         }
-
-        #endregion
-
-
-        #region Main
 
         private void Spawn()
         {
             
+            MapEntity[] _mapEntities = _map.GetEntitiesAtPosition(_currentMapEntityIndex);
             for(int i = 0; i < _spawnPositions.Length; i++)
             {
                 if(_mapEntities[i] != null)
                 {
-                    var mapEntity = Instantiate(Resources.Load<GameObject>("Prefabs/MapEntity/" + _mapEntities[i].ToString()), _spawnPositions[i].position, Quaternion.identity);
+                    var mapEntity = Instantiate(Resources.Load<GameObject>("Prefabs/MapEntity/" + _mapEntities[i].GetType().ToString()), _spawnPositions[i].position, Quaternion.identity);
                 }
             }
             GetNextMapEntity();
@@ -67,7 +81,9 @@ namespace Gameplay.Runtime
 
 
         #region Hidden
+        private Map _map;
         private float _elapsedTime;
+        private int _currentMapEntityIndex;
         private float _nextEntitySpawnTime;
 
         private MapEntity[] _mapEntities = new MapEntity[Map.NumberOfLanes];
