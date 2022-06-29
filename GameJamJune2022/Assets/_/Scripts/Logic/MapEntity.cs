@@ -28,19 +28,32 @@
 
     protected override void NotActOnIt(Player player)
     {
-      player.AddItemFame(m_Value);
+      player.AddFame(m_Value);
     }
   }
   public class Character : MapEntity
   {
     protected override void ActOnIt(Player player)
     {
-      throw new System.NotImplementedException();
+      player.AddFame(m_Value/2);
+      player.AddItemValue(-m_Value/2);
     }
 
     protected override void NotActOnIt(Player player)
     {
-      throw new System.NotImplementedException();
+      
+    }
+  }
+  public class Ennemy : MapEntity
+  {
+    protected override void ActOnIt(Player player)
+    {
+      player.AddSacrifice(m_Value);
+    }
+
+    protected override void NotActOnIt(Player player)
+    {
+      player.AddFame(m_Value);
     }
   }
 }
