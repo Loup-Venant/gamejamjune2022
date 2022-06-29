@@ -4,19 +4,31 @@ namespace Gameplay.Logic
 {
   public class Player
   {
+    public int m_Blood
+    {
+      get;
+      private set;
+    }
     public int m_Value
     {
-      get; private set;
+      get; 
+      private set;
     }
     public int m_Fame
     {
-      get; private set;
+      get; 
+      private set;
     }
     public int m_Position
     {
-      get; private set;
+      get; 
+      private set;
     }
-    public bool m_IsPassive { get; private set; }
+    public bool m_IsPassive 
+    { 
+      get; 
+      private set;
+    }
     public void ChangeStance()
     {
       m_IsPassive = !m_IsPassive;
@@ -26,15 +38,19 @@ namespace Gameplay.Logic
       m_Position++;
     }
 
-    internal void AddItemFame(int fame)
+    internal void AddFame(int value)
     {
-      m_Value += fame;
-
+      m_Fame += value;
     }
 
     internal void AddItemValue(int value)
     {
       m_Value += value;
+    }
+
+    internal void AddSacrifice(int value)
+    {
+      m_Blood += value;
     }
   }
 }
