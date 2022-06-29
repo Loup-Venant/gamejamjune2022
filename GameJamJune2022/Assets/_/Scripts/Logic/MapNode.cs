@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Gameplay.Logic
 {
@@ -6,26 +8,46 @@ namespace Gameplay.Logic
   {
     private List<MapEntity> _mapEntities;
     private List<ICondition> _availabilityConditions;
-    public MapNode() : this(new List<MapEntity>(), new List<ICondition>())
+    public EndNodeEntity m_endOfNodeEntity;
+    private List<MapNode> m_NextNodes;
+    public MapNode(EndNodeEntity endNode) : this(endNode, new List<MapEntity>(), new List<ICondition>())
     {
 
     }
-    public MapNode(List<MapEntity> entities) : this(entities, new List<ICondition>())
+    public MapNode(EndNodeEntity endNode, List<MapEntity> entities) : this(endNode, entities, new List<ICondition>())
     {
 
     }
-    public MapNode(List<MapEntity> entities, List<ICondition> conditions)
+    public MapNode(EndNodeEntity endNode, List<MapEntity> entities, List<ICondition> conditions)
     {
+      m_NextNodes = new List<MapNode>();
       _mapEntities = entities;
       _availabilityConditions = conditions;
+      m_endOfNodeEntity = endNode;
     }
 
+    public void AddNode(MapNode newNode)
+    {
+      m_NextNodes.Add(newNode);
+    }
+    public List<MapNode> GetAvailableNodes()
+    {
+      return m_NextNodes.Where(n => n.IsAvailable()).ToList();
+    }
+    public MapNode SelectNextNode(int index)
+    {
+      return GetAvailableNodes()[index];
+    }
     public bool IsAvailable()
     {
       if (_availabilityConditions.Count == 0)
         return true;
       return _availabilityConditions.TrueForAll(c => c.Evaluate());
     }
-  }
 
+    internal List<MapEntity> GetEntities()
+    {
+      return _mapEntities;
+    }
+  }
 }

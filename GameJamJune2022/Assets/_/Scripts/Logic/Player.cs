@@ -9,6 +9,11 @@ namespace Gameplay.Logic
       get;
       private set;
     }
+    public int m_Time
+    {
+      get;
+      private set;
+    }
     public int m_Value
     {
       get; 
