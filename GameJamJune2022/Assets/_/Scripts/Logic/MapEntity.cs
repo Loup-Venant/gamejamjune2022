@@ -18,9 +18,15 @@
     }
     protected abstract void ActOnIt(Player player);
     protected abstract void NotActOnIt(Player player);
+    public abstract string GetName();
   }
   public class Item : MapEntity
   {
+    public override string GetName()
+    {
+      return "Item";
+    }
+
     protected override void ActOnIt(Player player)
     {
       player.AddItemValue(m_Value);
@@ -43,8 +49,12 @@
     {
       
     }
+    public override string GetName()
+    {
+      return "Character";
+    }
   }
-  public class Ennemy : MapEntity
+  public class Enemy : MapEntity
   {
     protected override void ActOnIt(Player player)
     {
@@ -54,6 +64,10 @@
     protected override void NotActOnIt(Player player)
     {
       player.AddFame(m_Value);
+    }
+    public override string GetName()
+    {
+      return "Enemy";
     }
   }
 }

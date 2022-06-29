@@ -15,7 +15,7 @@ namespace Gameplay.Logic
     {
       _firstNode = firstNode;
     }
-    public Map(List<MapEntity> allEntities) : base()
+    public Map(List<MapEntity> allEntities) : this()
     {
       _firstNode = new MapNode(allEntities);
       AddEntities(allEntities);
