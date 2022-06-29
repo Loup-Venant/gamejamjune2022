@@ -8,16 +8,31 @@ namespace Gameplay.Runtime
     {
         #region Exposed
 
-        [SerializeField] private Transform[] spawnPositions;
+        [Header ("Spawner Properties")]
+        [SerializeField, Tooltip("The global spawn speed in seconds")] private float _spawnSpeed = 1f;
+
+        [Header ("Dev DEBUG")]
+        [SerializeField] private Transform[] _spawnPositions;
+
 
 
         #endregion
 
         #region Unity API
 
+        private void Start()
+        {
+            _elapsedTime = 0f;
+        }
+
         private void Update()
         {
-            Spawn();
+            _elapsedTime += Time.deltaTime;
+            if (_elapsedTime >= _spawnSpeed)
+            {
+                _elapsedTime = 0f;
+                Spawn();
+            }
         }
 
         #endregion
@@ -26,18 +41,17 @@ namespace Gameplay.Runtime
 
         private void Spawn()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            
+            for(int i = 0; i < _spawnPositions.Length; i++)
             {
-                for(int i = 0; i < spawnPositions.Length; i++)
-                {
-                    Instantiate(Resources.Load<GameObject>("Prefabs/MapEntity"), spawnPositions[i].position, Quaternion.identity);
-                }
+                var mapEntity = Instantiate(Resources.Load<GameObject>("Prefabs/MapEntity"), _spawnPositions[i].position, Quaternion.identity);
             }
         }
 
         #endregion
 
         #region Hidden
+        private float _elapsedTime;
 
         #endregion
     }
