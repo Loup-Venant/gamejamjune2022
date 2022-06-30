@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Gameplay.Logic;
 
 namespace Gameplay.Runtime
 {
-    public class MovePlayer : MonoBehaviour
+    public class PlayerBehaviour : MonoBehaviour
     {
       // Player is moving between n number of lanes.
       // Each lane is on a diferrent y height.
@@ -16,6 +17,7 @@ namespace Gameplay.Runtime
       
       [SerializeField] private float _speed;
       Transform _targetPosition;
+      public Player m_player;
 
       #endregion
 
@@ -23,6 +25,7 @@ namespace Gameplay.Runtime
 
       private void Awake()
       {
+        m_player = new Player();
        _rigidbody = GetComponent<Rigidbody2D>();
       }
 
@@ -36,6 +39,12 @@ namespace Gameplay.Runtime
       {
         Move();
       }
+
+      private void OnTriggerEnter2D(Collider other)
+      {
+        other.GetComponent<MapEntityBehaviour>().HitByPlayer(m_player);
+      }
+
 
 
       #endregion

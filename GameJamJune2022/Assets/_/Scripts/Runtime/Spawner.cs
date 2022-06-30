@@ -66,7 +66,7 @@ namespace Gameplay.Runtime
     private void Spawn()
     {
 
-      MapEntity[] _mapEntities = _map.GetEntitiesAtPosition(_currentMapEntityIndex);
+      MapEntityBehaviour[] _mapEntities = _map.GetEntitiesAtPosition(_currentMapEntityIndex);
       for (int i = 0; i < _spawnPositions.Length; i++)
       {
         if (_mapEntities[i] != null)
@@ -87,7 +87,7 @@ namespace Gameplay.Runtime
     private int _currentMapEntityIndex;
     private float _nextEntitySpawnTime;
 
-    private MapEntity[] _mapEntities = new MapEntity[Map.NumberOfLanes];
+    private MapEntityBehaviour[] _mapEntities = new MapEntityBehaviour[Map.NumberOfLanes];
 
     #endregion
   }
