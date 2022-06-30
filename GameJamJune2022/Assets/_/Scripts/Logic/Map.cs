@@ -35,11 +35,6 @@ namespace Gameplay.Logic
 
     #endregion
 
-    public void PopulateMap(MapNode node)
-    {
-      AddEntities(node.GetEntities());
-    }
-
     #region Getters
 
     public MapNode GetFirstNode()
@@ -73,6 +68,10 @@ namespace Gameplay.Logic
 
     #region Add content
 
+    public void PopulateMap(MapNode node)
+    {
+      AddEntities(node.GetEntities());
+    }
     public void AddEntities(List<MapEntity> entities)
     {
       foreach (var entity in entities)
