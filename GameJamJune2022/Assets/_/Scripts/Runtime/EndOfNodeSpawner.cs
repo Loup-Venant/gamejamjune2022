@@ -1,13 +1,11 @@
-using System;
+using Gameplay.Logic;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Gameplay.Logic;
-using Gameplay.Data;
 
 namespace Gameplay.Runtime
 {
-  public class Spawner : MonoBehaviour
+  public class EndOfNodeSpawner : MonoBehaviour
   {
     #region Exposed
 
@@ -16,7 +14,6 @@ namespace Gameplay.Runtime
 
     [Header("Dev DEBUG")]
     [SerializeField] private Transform[] _spawnPositions;
-    [SerializeField] private IntValue _currentMapEntityIndexContainer;
 
 
 
@@ -29,7 +26,7 @@ namespace Gameplay.Runtime
       Initialize();
       var script = GetComponent<MockMapGenerator>();
       script.CreateMap();
-      _map = script.m_map;
+      _endNodeEntity = script.m_map;
 
       GetNextMapEntity();
     }
@@ -38,7 +35,6 @@ namespace Gameplay.Runtime
     {
       _elapsedTime = 0f;
       _currentMapEntityIndex = 0;
-      _currentMapEntityIndexContainer.m_value = _currentMapEntityIndex;
     }
 
     private void Update()
@@ -57,7 +53,7 @@ namespace Gameplay.Runtime
       {
         _elapsedTime = 0f;
         _currentMapEntityIndex++;
-        _currentMapEntityIndexContainer.m_value = _currentMapEntityIndex;
+        if(_currentMapEntityIndex >= _endNodeEntity)
         Spawn();
       }
     }
@@ -65,23 +61,24 @@ namespace Gameplay.Runtime
     private void Spawn()
     {
 
-      var mapEntities = _map.GetEntitiesAtPosition(_currentMapEntityIndex);
+      var mapEntities = _endNodeEntity.GetEntitiesAtPosition(_currentMapEntityIndex);
       for (int i = 0; i < _spawnPositions.Length; i++)
       {
         if (mapEntities[i] != null)
         {
           var temp = "Prefabs/MapEntities/" + mapEntities[i].GetName();
-          var mapEntity = Instantiate(Resources.Load<GameObject>(temp), _spawnPositions[i].position, Quaternion.identity, transform);
+          var mapEntity = Instantiate(Resources.Load<GameObject>(temp), _spawnPositions[i].position, Quaternion.identity);
           mapEntity.GetComponent<MapEntityBehaviour>().SetMapEntity(mapEntities[i]);
         }
       }
+      GetNextMapEntity();
     }
 
     #endregion
 
 
     #region Hidden
-    private Map _map;
+    private EndNodeEntity _endNodeEntity;
     private float _elapsedTime;
     private int _currentMapEntityIndex;
     private float _nextEntitySpawnTime;
