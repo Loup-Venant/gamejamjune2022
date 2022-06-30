@@ -7,7 +7,7 @@ namespace Gameplay.Logic
   {
     public static int NumberOfLanes;
 
-    public Dictionary<int, MapEntity>[] m_Lanes;
+    public Dictionary<int, InteractableMapEntity>[] m_Lanes;
     public Dictionary<int, Decision> m_History;
     private MapNode _firstNode;
     private MapNode _currentNode;
@@ -17,23 +17,33 @@ namespace Gameplay.Logic
     public Map(MapNode firstNode) : this()
     {
       _firstNode = firstNode;
+      PopulateMap(_firstNode);
+      StartGame();
     }
-    public Map(List<MapEntity> allEntities) : this()
+
+    public Map(List<InteractableMapEntity> allEntities) : this()
     {
       _firstNode = new MapNode(new EndNodeEntity("temple", 50), allEntities);
+      PopulateMap(_firstNode);
+      StartGame();
     }
     public Map()
     {
-      m_Lanes = new Dictionary<int, MapEntity>[NumberOfLanes];
+      m_Lanes = new Dictionary<int, InteractableMapEntity>[NumberOfLanes];
       for (int i = 0; i < NumberOfLanes; i++)
       {
-        m_Lanes[i] = new Dictionary<int, MapEntity>();
+        m_Lanes[i] = new Dictionary<int, InteractableMapEntity>();
       }
       m_History = new Dictionary<int, Decision>();
-      PopulateMap(_firstNode);
-    } 
+      _firstNode = new MapNode(new EndNodeEntity("temple", 50));
+    }
+
 
     #endregion
+    private void StartGame()
+    {
+      _currentNode = _firstNode;
+    }
 
     #region Getters
 
@@ -41,16 +51,16 @@ namespace Gameplay.Logic
     { return _firstNode; }
     public MapNode GetCurrentNode()
     { return _currentNode; }
-    public MapEntity[] GetEntitiesAtPosition(int position)
+    public InteractableMapEntity[] GetEntitiesAtPosition(int position)
     {
-      var retVal = new MapEntity[NumberOfLanes];
+      var retVal = new InteractableMapEntity[NumberOfLanes];
 
       if (_currentNode.m_endOfNodeEntity.m_Position == position)
       {
         for (int i = 0; i < NumberOfLanes; i++)
         {
-          if (m_Lanes[i].ContainsKey(position))
-            retVal[i] = _currentNode.m_endOfNodeEntity;
+          //if (m_Lanes[i].ContainsKey(position))
+          //retVal[i] = _currentNode.m_endOfNodeEntity;
         }
       }
       else
@@ -70,9 +80,10 @@ namespace Gameplay.Logic
 
     public void PopulateMap(MapNode node)
     {
+      var temp = node.GetEntities();
       AddEntities(node.GetEntities());
     }
-    public void AddEntities(List<MapEntity> entities)
+    public void AddEntities(List<InteractableMapEntity> entities)
     {
       foreach (var entity in entities)
       {
@@ -80,7 +91,7 @@ namespace Gameplay.Logic
           m_Lanes[entity.m_LaneId].Add(entity.m_Position, entity);
       }
     }
-    public void AddEntity(MapEntity entity, int lane, int position)
+    public void AddEntity(InteractableMapEntity entity, int lane, int position)
     {
       m_Lanes[lane].Add(position, entity);
     }

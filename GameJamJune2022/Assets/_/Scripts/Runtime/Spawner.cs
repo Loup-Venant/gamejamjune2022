@@ -66,7 +66,7 @@ namespace Gameplay.Runtime
     private void Spawn()
     {
 
-      MapEntity[] _mapEntities = _map.GetEntitiesAtPosition(_currentMapEntityIndex);
+      var _mapEntities = _map.GetEntitiesAtPosition(_currentMapEntityIndex);
       for (int i = 0; i < _spawnPositions.Length; i++)
       {
         if (_mapEntities[i] != null)

@@ -41,7 +41,7 @@ namespace Gameplay.Runtime
       Map.NumberOfLanes = 3;
       var mapEntities = new List<InteractableMapEntity>();
       Populate(mapEntities);
-      m_map = new Map( mapEntities.OfType<MapEntity>().ToList());
+      m_map = new Map( mapEntities);
     }
 
     #endregion
