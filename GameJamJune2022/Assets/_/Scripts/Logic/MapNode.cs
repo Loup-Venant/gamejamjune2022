@@ -10,6 +10,7 @@ namespace Gameplay.Logic
     private List<ICondition> _availabilityConditions;
     public EndNodeEntity m_endOfNodeEntity;
     private List<MapNode> m_NextNodes;
+    public string m_haikuPart = "";
     public MapNode(EndNodeEntity endNode) : this(endNode, new List<InteractableMapEntity>(), new List<ICondition>())
     {
 
