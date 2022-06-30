@@ -71,7 +71,7 @@ namespace Gameplay.Runtime
       {
         if (mapEntities[i] != null)
         {
-          var temp = "Prefabs/" + mapEntities[i].GetName();
+          var temp = "Prefabs/MapEntities/" + mapEntities[i].GetName();
           var mapEntity = Instantiate(Resources.Load<GameObject>(temp), _spawnPositions[i].position, Quaternion.identity);
           mapEntity.GetComponent<MapEntityBehaviour>().SetMapEntity(mapEntities[i]);
         }
