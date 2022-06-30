@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Gameplay.Logic;
 using UnityEngine;
-
+using System.Linq;
 
 namespace Gameplay.Runtime
 {
@@ -41,7 +41,7 @@ namespace Gameplay.Runtime
       Map.NumberOfLanes = 3;
       var mapEntities = new List<InteractableMapEntity>();
       Populate(mapEntities);
-      m_map = new Map(mapEntities);
+      m_map = new Map( mapEntities.OfType<MapEntity>().ToList());
     }
 
     #endregion

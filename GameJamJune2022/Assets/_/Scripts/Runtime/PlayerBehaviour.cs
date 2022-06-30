@@ -20,6 +20,7 @@ namespace Gameplay.Runtime
       public Player m_player;
 
       #endregion
+      
 
       #region Unity API
 
@@ -40,7 +41,7 @@ namespace Gameplay.Runtime
         Move();
       }
 
-      private void OnTriggerEnter2D(Collider other)
+      private void OnTriggerEnter2D(Collider2D other)
       {
         other.GetComponent<MapEntityBehaviour>().HitByPlayer(m_player);
       }
