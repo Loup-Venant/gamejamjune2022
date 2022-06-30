@@ -30,8 +30,6 @@ namespace Gameplay.Runtime
       var script = GetComponent<MockMapGenerator>();
       script.CreateMap();
       _map = script.m_map;
-
-      GetNextMapEntity();
     }
 
     private void Initialize()
