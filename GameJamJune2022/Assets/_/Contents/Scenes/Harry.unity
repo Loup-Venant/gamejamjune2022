@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4359bb40fa4807e40a9480c6ad548ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_firstNode: {fileID: 11400000, guid: 03853505224c012498b67ca7e76a4b02, type: 2}
 --- !u!1 &291099471
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +290,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8755624260687735957, guid: 6bfaa9643889f5842be523e52324821c, type: 3}
+      propertyPath: m_Size.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8755624260687735957, guid: 6bfaa9643889f5842be523e52324821c, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8755624260687735957, guid: 6bfaa9643889f5842be523e52324821c, type: 3}
+      propertyPath: m_Offset.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8755624260687735957, guid: 6bfaa9643889f5842be523e52324821c, type: 3}
+      propertyPath: m_Offset.y
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: -733945026225242367, guid: 6bfaa9643889f5842be523e52324821c, type: 3}
       propertyPath: _speed
       value: 5

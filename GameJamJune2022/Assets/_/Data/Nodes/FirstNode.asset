@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: FirstNode
   m_EditorClassIdentifier: 
   m_haiku: 
+  m_nextNodes:
+  - {fileID: 11400000}
+  m_conditions: []
+  m_endNode: {fileID: 11400000, guid: 63c1db4c38acf694abd764fbd763f14e, type: 2}
+  m_interactables: {fileID: 11400000, guid: d522dbefcd35d284cbfb7bec3ce4d761, type: 2}

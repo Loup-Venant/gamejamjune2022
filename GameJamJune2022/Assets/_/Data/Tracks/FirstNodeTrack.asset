@@ -13,6 +13,126 @@ MonoBehaviour:
   m_Name: FirstNodeTrack
   m_EditorClassIdentifier: 
   m_Lane0:
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
   - {fileID: 0}
-  m_Lane1: []
-  m_Lane2: []
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 796ad9543a6854548a50005de2c6faaf, type: 2}
+  - {fileID: 11400000, guid: 796ad9543a6854548a50005de2c6faaf, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 796ad9543a6854548a50005de2c6faaf, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 796ad9543a6854548a50005de2c6faaf, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
+  m_Lane1:
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: d5e974277d72e344da23474e7f430c40, type: 2}
+  - {fileID: 11400000, guid: d5e974277d72e344da23474e7f430c40, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 796ad9543a6854548a50005de2c6faaf, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_Lane2:
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: d5e974277d72e344da23474e7f430c40, type: 2}
+  - {fileID: 11400000, guid: 0eb0bbec5c7d41445882337b3af41fd5, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
