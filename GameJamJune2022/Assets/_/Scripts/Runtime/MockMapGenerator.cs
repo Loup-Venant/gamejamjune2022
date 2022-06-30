@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Gameplay.Logic;
 using UnityEngine;
 using System.Linq;
+using Gameplay.Data;
 
 namespace Gameplay.Runtime
 {
@@ -12,6 +13,7 @@ namespace Gameplay.Runtime
     #region Exposed
 
     public Map m_map;
+    public MapNodeContainer m_firstNode;
 
     #endregion
 
@@ -40,8 +42,8 @@ namespace Gameplay.Runtime
     {
       Map.NumberOfLanes = 3;
       var mapEntities = new List<InteractableMapEntity>();
-      Populate(mapEntities);
-      m_map = new Map( mapEntities);
+      
+      m_map = new Map(m_firstNode.GetNode());
     }
 
     #endregion
