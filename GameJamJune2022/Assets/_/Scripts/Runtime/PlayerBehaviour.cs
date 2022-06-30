@@ -15,9 +15,13 @@ namespace Gameplay.Runtime
     // when player doesn't input anything the player is drifting toward another random lane.
 
     #region Exposed
-
+    [Header("Player Properties")]
     [SerializeField] private float _speed;
-    Transform _targetPosition;
+
+    [SerializeField] private Sprite _maskIdle;
+    [SerializeField] private Sprite _maskAngry;
+
+    [Header("Dev DEBUG")]
     public Player m_player;
     
     [SerializeField] private PlayerContainer _player;
@@ -33,6 +37,7 @@ namespace Gameplay.Runtime
       _player.m_player = m_player;
 
       _rigidbody = GetComponent<Rigidbody2D>();
+      _renderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -72,9 +77,19 @@ namespace Gameplay.Runtime
     {
       float vertical = Input.GetAxis("Vertical");
 
-
       _direction = new Vector2(0, vertical);
-      Debug.Log(_direction);
+
+      if(Input.GetButtonDown("ChangeStance"))
+      {
+        m_player.ChangeStance();
+        ChangeSprite();
+      }
+      
+    }
+
+    private void ChangeSprite()
+    {
+      _renderer.sprite = m_player.m_IsPassive ? _maskIdle : _maskAngry;
     }
 
     #endregion
@@ -83,6 +98,8 @@ namespace Gameplay.Runtime
 
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;
+
+    private SpriteRenderer _renderer;
 
     #endregion
   }

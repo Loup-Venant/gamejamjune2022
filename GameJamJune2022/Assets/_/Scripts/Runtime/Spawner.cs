@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Gameplay.Logic;
+using Gameplay.Data;
 
 namespace Gameplay.Runtime
 {
@@ -15,6 +16,7 @@ namespace Gameplay.Runtime
 
     [Header("Dev DEBUG")]
     [SerializeField] private Transform[] _spawnPositions;
+    [SerializeField] private IntValue _currentMapEntityIndexContainer;
 
 
 
@@ -36,6 +38,7 @@ namespace Gameplay.Runtime
     {
       _elapsedTime = 0f;
       _currentMapEntityIndex = 0;
+      _currentMapEntityIndexContainer.m_value = _currentMapEntityIndex;
     }
 
     private void Update()
@@ -54,6 +57,7 @@ namespace Gameplay.Runtime
       {
         _elapsedTime = 0f;
         _currentMapEntityIndex++;
+        _currentMapEntityIndexContainer.m_value = _currentMapEntityIndex;
         Spawn();
       }
     }
