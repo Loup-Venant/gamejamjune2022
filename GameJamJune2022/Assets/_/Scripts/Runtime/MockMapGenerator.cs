@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Gameplay.Logic;
 using UnityEngine;
-
+using System.Linq;
 
 namespace Gameplay.Runtime
 {
@@ -22,7 +22,7 @@ namespace Gameplay.Runtime
 
     }
 
-    private void Populate(List<MapEntity> mapEntities)
+    private void Populate(List<InteractableMapEntity> mapEntities)
     {
       for (int i = 0; i < 10; i++)
       {
@@ -39,9 +39,9 @@ namespace Gameplay.Runtime
     public void CreateMap()
     {
       Map.NumberOfLanes = 3;
-      List<MapEntity> mapEntities = new List<MapEntity>();
+      var mapEntities = new List<InteractableMapEntity>();
       Populate(mapEntities);
-      m_map = new Map(mapEntities);
+      m_map = new Map( mapEntities);
     }
 
     #endregion
