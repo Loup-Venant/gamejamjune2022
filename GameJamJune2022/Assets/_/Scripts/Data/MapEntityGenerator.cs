@@ -16,20 +16,18 @@ namespace Gameplay.Data
     public class MapEntityGenerator : ScriptableObject
     {
       public MapEntityType m_type;
-      public int m_characterValue;
-      public int m_enemyValue;
-      public int m_itemValue;
+      public int m_value = 4;
 
       public InteractableMapEntity GetEntity(int position, int laneId)
       {
         switch (m_type)
         {
           case MapEntityType.Enemy:
-            return new Enemy() { m_LaneId = laneId, m_Position = position, m_Value = m_enemyValue };
+            return new Enemy() { m_LaneId = laneId, m_Position = position, m_Value = m_value };
           case MapEntityType.Item:
-            return new Item() { m_LaneId = laneId, m_Position = position, m_Value = m_itemValue };
+            return new Item() { m_LaneId = laneId, m_Position = position, m_Value = m_value };
           case MapEntityType.Character:
-            return new Character() { m_LaneId = laneId, m_Position = position, m_Value = m_characterValue };
+            return new Character() { m_LaneId = laneId, m_Position = position, m_Value = m_value };
           default:
             return new Enemy() { m_LaneId = laneId, m_Position = position, m_Value = 100};
         }
