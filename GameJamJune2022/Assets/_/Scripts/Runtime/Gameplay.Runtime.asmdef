@@ -3,7 +3,8 @@
     "rootNamespace": "Gameplay.Runtime",
     "references": [
         "GUID:af263eeee92b44c4283973702bd70bd7",
-        "GUID:a25f64154a1a3d74d9803474714bd65d"
+        "GUID:a25f64154a1a3d74d9803474714bd65d",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

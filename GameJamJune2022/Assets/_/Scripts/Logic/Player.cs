@@ -2,6 +2,13 @@
 
 namespace Gameplay.Logic
 {
+  public enum PlayerStat
+  {
+    Money,
+    Fame,
+    GodFavor,
+    Time
+  }
   public class Player
   {
     public int m_Blood

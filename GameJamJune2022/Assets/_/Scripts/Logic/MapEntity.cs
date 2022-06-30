@@ -77,6 +77,7 @@
   public class EndNodeEntity : MapEntity
   {
     private string _nodeName;
+    public int m_ChoiceValue;
 
     public EndNodeEntity(string name, int position)
     {

@@ -11,10 +11,17 @@ namespace Gameplay.Logic
     public EndNodeEntity m_endOfNodeEntity;
     private List<MapNode> m_NextNodes;
     public string m_haikuPart = "";
+    public int m_WastedTime;
     public MapNode(EndNodeEntity endNode) : this(endNode, new List<InteractableMapEntity>(), new List<ICondition>())
     {
 
     }
+
+    public string GetChoiceText()
+    {
+      throw new NotImplementedException();
+    }
+
     public MapNode(EndNodeEntity endNode, List<InteractableMapEntity> entities) : this(endNode, entities, new List<ICondition>())
     {
 
