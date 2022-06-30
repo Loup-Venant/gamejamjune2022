@@ -66,13 +66,14 @@ namespace Gameplay.Runtime
     private void Spawn()
     {
 
-      var _mapEntities = _map.GetEntitiesAtPosition(_currentMapEntityIndex);
+      var mapEntities = _map.GetEntitiesAtPosition(_currentMapEntityIndex);
       for (int i = 0; i < _spawnPositions.Length; i++)
       {
-        if (_mapEntities[i] != null)
+        if (mapEntities[i] != null)
         {
-          var temp = "Prefabs/" + _mapEntities[i].GetName();
+          var temp = "Prefabs/" + mapEntities[i].GetName();
           var mapEntity = Instantiate(Resources.Load<GameObject>(temp), _spawnPositions[i].position, Quaternion.identity);
+          mapEntity.GetComponent<MapEntityBehaviour>().SetMapEntity(mapEntities[i]);
         }
       }
       GetNextMapEntity();

@@ -16,7 +16,7 @@ namespace Gameplay.Runtime
 
       #region Main
       
-      private void SetMapEntity(InteractableMapEntity mapEntity)
+      public void SetMapEntity(InteractableMapEntity mapEntity)
       {
         m_mapEntity = mapEntity;
       }
