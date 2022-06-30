@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Gameplay.Logic;
+using Gameplay.Data;
 
 namespace Gameplay.Runtime
 {
@@ -18,6 +19,8 @@ namespace Gameplay.Runtime
     [SerializeField] private float _speed;
     Transform _targetPosition;
     public Player m_player;
+    
+    [SerializeField] private PlayerContainer _player;
 
     #endregion
 
@@ -27,6 +30,8 @@ namespace Gameplay.Runtime
     private void Awake()
     {
       m_player = new Player();
+      _player.m_player = m_player;
+
       _rigidbody = GetComponent<Rigidbody2D>();
     }
 
