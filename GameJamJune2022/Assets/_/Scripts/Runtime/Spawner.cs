@@ -1,3 +1,4 @@
+using System;
 using Gameplay.Data;
 using Gameplay.Logic;
 using UnityEngine;
@@ -30,13 +31,52 @@ namespace Gameplay.Runtime
     private void Initialize()
     {
       _elapsedTime = 0f;
-      _currentMapEntityIndex = 0;
+      _currentMapEntityIndex = -3;
+      _currentMapEntityIndexContainer.m_value = _currentMapEntityIndex;
+    }
+    private void ResetAfterNextNode()
+    {
+      _elapsedTime = 0f;
+      _currentMapEntityIndex = -4;
       _currentMapEntityIndexContainer.m_value = _currentMapEntityIndex;
     }
 
     private void Update()
     {
       SpawnOnTime();
+      GetInput();
+    }
+
+    private void GetInput()
+    {
+      var availableNodes = _map.GetCurrentNode().GetAvailableNodes();
+      var currentEndOfNode = _map.GetCurrentNode().m_endOfNodeEntity;
+      if (_currentMapEntityIndex >= currentEndOfNode.m_Position)
+      {
+        if (Input.GetKeyDown(KeyCode.UpArrow) && availableNodes.Count >= 1)
+        {
+          Debug.Log("Up");
+          ResetAfterNextNode();
+          _map.SetNode(availableNodes[0]);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && availableNodes.Count >= 2)
+        {
+          ResetAfterNextNode();
+          _map.SetNode(availableNodes[1]);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow) && availableNodes.Count >= 3)
+        {
+          ResetAfterNextNode();
+          _map.SetNode(availableNodes[2]);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow) && availableNodes.Count >= 4)
+        {
+          ResetAfterNextNode();
+          _map.SetNode(availableNodes[3]);
+        }
+        Debug.Log(_map.GetCurrentNode().GetChoiceText());
+      }
+
     }
 
     #endregion
@@ -51,16 +91,17 @@ namespace Gameplay.Runtime
         _elapsedTime = 0f;
         _currentMapEntityIndex++;
         _currentMapEntityIndexContainer.m_value = _currentMapEntityIndex;
-
-        if(_currentMapEntityIndex >= _map.GetCurrentNode().m_endOfNodeEntity.m_Position)
+        var endOfNodePosition = _map.GetCurrentNode().m_endOfNodeEntity.m_Position;
+        if (_currentMapEntityIndex == endOfNodePosition)
         {
           SpawnEndNode(_map.GetCurrentNode().m_endOfNodeEntity);
         }
-        Spawn();
+        if (_currentMapEntityIndex < endOfNodePosition)
+          SpawnInteractable();
       }
     }
 
-    private void Spawn()
+    private void SpawnInteractable()
     {
 
       var mapEntities = _map.GetEntitiesAtPosition(_currentMapEntityIndex);
@@ -77,7 +118,9 @@ namespace Gameplay.Runtime
     private void SpawnEndNode(EndNodeEntity endNodeEntity)
     {
       var endOfNodeEntity = Instantiate(Resources.Load<GameObject>("Prefabs/EndNodes/" + endNodeEntity.GetName()), _spawnPositions[1].position, Quaternion.identity);
-      endOfNodeEntity.GetComponent<EndOfNode>().SetUITextChoices(_map.GetCurrentNode().GetAvailableNodes());
+      var temp = _map.GetCurrentNode().GetAvailableNodes();
+      endOfNodeEntity.GetComponent<EndOfNode>().SetUITextChoices(temp);
+
       //add choice
     }
 
