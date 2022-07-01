@@ -23,7 +23,9 @@ namespace Gameplay.Data
     {
       if (m_Node == null)
       {
-        m_Node = new MapNode(m_endNode.GetEntity(), m_interactables.GetEntities(), m_conditions.Select(c => c.GetCondition()).ToList()){m_ChoiceName = m_ChoiceName, m_WastedTime = m_WastedTime};
+        m_nextNodes = m_nextNodes.Where(n => n != null).ToList();
+        m_Node = new MapNode(m_endNode.GetEntity(), m_interactables.GetEntities(), m_conditions.Select(c => c.GetCondition()).ToList())
+        {m_ChoiceName = m_ChoiceName, m_WastedTime = m_WastedTime};
         foreach(var n in m_nextNodes)
         {
           AddNode(n);
@@ -33,7 +35,7 @@ namespace Gameplay.Data
     }
     private void AddNode(MapNodeContainer node)
     {
-      node.m_Node.AddNode(node.GetNode());
+      node.GetNode().AddNode(node.GetNode());
     }
   }
 }

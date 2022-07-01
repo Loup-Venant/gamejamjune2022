@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ChoiceName: Kill
   m_nextNodes:
-  - {fileID: 11400000, guid: 03853505224c012498b67ca7e76a4b02, type: 2}
+  - {fileID: 0}
   m_conditions:
   - {fileID: 11400000, guid: d5b1cdf18411e2f4ebfa86609cd697d7, type: 2}
   m_endNode: {fileID: 11400000, guid: 63c1db4c38acf694abd764fbd763f14e, type: 2}
