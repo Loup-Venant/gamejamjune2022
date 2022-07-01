@@ -24,7 +24,7 @@ namespace Gameplay.Runtime
 
     [Header("Dev DEBUG")]
     public Player m_player;
-    
+
     [SerializeField] private PlayerContainer _player;
 
     #endregion
@@ -36,7 +36,7 @@ namespace Gameplay.Runtime
     {
       m_player = new Player();
       _player.m_player = m_player;
-            _soundPlayer = GetComponent<SoundPlayer>();
+      _soundPlayer = GetComponent<SoundPlayer>();
 
       _rigidbody = GetComponent<Rigidbody2D>();
       _renderer = GetComponent<SpriteRenderer>();
@@ -57,31 +57,27 @@ namespace Gameplay.Runtime
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-<<<<<<< HEAD
-      var temp = other.GetComponent<MapEntityBehaviour>();
-      temp.HitByPlayer(m_player);
-       if(temp.m_mapEntity.GetName().Contains("tem"))
-       {
-           _soundPlayer.PlayTotem();
-       }  
-       if(temp.m_mapEntity.GetName().Contains("nemy"))
-       {
-           _soundPlayer.PlayEnemy();
-       }  
-       if(temp.m_mapEntity.GetName().Contains("racte"))
-       {
-           _soundPlayer.PlayAztek();
-       }
-=======
-      if(other.tag == "Interactable")
+      if (other.tag == "Interactable")
       {
+        var temp = other.GetComponent<MapEntityBehaviour>();
+        if (temp.m_mapEntity.GetName().Contains("tem"))
+        {
+          _soundPlayer.PlayTotem();
+        }
+        if (temp.m_mapEntity.GetName().Contains("nemy"))
+        {
+          _soundPlayer.PlayEnemy();
+        }
+        if (temp.m_mapEntity.GetName().Contains("racte"))
+        {
+          _soundPlayer.PlayAztek();
+        }
         other.GetComponent<MapEntityBehaviour>().InteractableHitByPlayer(m_player);
       }
-      else if(other.tag == "EndOfNode")
+      else if (other.tag == "EndOfNode")
       {
         other.GetComponent<MapEntityBehaviour>().EndOfNodeHitByPlayer(m_player);
       }
->>>>>>> b821c50dac414e5a6d55a4c57f2186d24fb6a052
     }
 
 
@@ -106,12 +102,12 @@ namespace Gameplay.Runtime
 
       _direction = new Vector2(0, vertical);
 
-      if(Input.GetButtonDown("ChangeStance"))
+      if (Input.GetButtonDown("ChangeStance"))
       {
         m_player.ChangeStance();
         ChangeSprite();
       }
-      
+
     }
 
     private void ChangeSprite()
@@ -125,7 +121,7 @@ namespace Gameplay.Runtime
 
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;
-        private SoundPlayer _soundPlayer;
+    private SoundPlayer _soundPlayer;
 
     private SpriteRenderer _renderer;
 
