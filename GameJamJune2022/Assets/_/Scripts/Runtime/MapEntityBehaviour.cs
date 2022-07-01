@@ -26,7 +26,7 @@ namespace Gameplay.Runtime
         m_mapEntity.Choose(m_player, m_player.m_IsPassive);
 
         
-        Destroy(gameObject, .5f);
+        Destroy(gameObject, .1f);
         
       }
 
