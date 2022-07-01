@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Gameplay.Data;
+using TMPro;
 
 namespace Gameplay.Runtime
 {
@@ -15,11 +16,13 @@ namespace Gameplay.Runtime
     }
     private void Start()
     {
-      Debug.Log(GetHaiku(true));
-      Debug.Log(GetHaiku(true));
-      Debug.Log(GetHaiku(true));
-      Debug.Log(GetHaiku(false));
-      Debug.Log(GetHaiku(false));
+      var tmp = GetComponent<TextMeshProUGUI>();
+      tmp.text = GetHaiku(true) +"\n\n\n" + tmp.text;
+      //Debug.Log(GetHaiku(true));
+      //Debug.Log(GetHaiku(true));
+      //Debug.Log(GetHaiku(true));
+      //Debug.Log(GetHaiku(false));
+      //Debug.Log(GetHaiku(false));
     }
   }
 }

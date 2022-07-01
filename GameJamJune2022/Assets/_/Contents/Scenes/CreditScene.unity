@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 447111720}
   - component: {fileID: 447111719}
   - component: {fileID: 447111718}
+  - component: {fileID: 447111721}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -364,8 +365,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000029564, y: -934}
-  m_SizeDelta: {x: 961.4901, y: 1285.6885}
+  m_AnchoredPosition: {x: 0.000029564, y: -1414.5006}
+  m_SizeDelta: {x: 961.4901, y: 2246.6897}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &447111718
 Animator:
@@ -472,7 +473,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 12.155029}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -486,6 +487,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447111716}
   m_CullTransparentMesh: 1
+--- !u!114 &447111721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447111716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1c35452303985449ea3eb4a2b37133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Haikus:
+  - {fileID: 11400000, guid: 3cf3f7e18bc393945976c50cb7380578, type: 2}
+  - {fileID: 11400000, guid: bb070119f0c45d84abfaa67eb0a81a31, type: 2}
+  - {fileID: 11400000, guid: 78c50a5812493bb43b88d78fb9d86ceb, type: 2}
 --- !u!1 &743189095
 GameObject:
   m_ObjectHideFlags: 0
