@@ -35,7 +35,7 @@ namespace Gameplay.Data
     }
     private void AddNode(MapNodeContainer node)
     {
-      node.GetNode().AddNode(node.GetNode());
+      GetNode().AddNode(node.GetNode());
     }
   }
 }

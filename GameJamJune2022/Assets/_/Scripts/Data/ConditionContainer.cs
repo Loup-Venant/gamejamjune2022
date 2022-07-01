@@ -9,7 +9,7 @@ namespace Gameplay.Data
   public class ConditionContainer : ScriptableObject
   {
     private ICondition _condition;
-    public PlayerValueGetterContainer m_playerValue;
+    public PlayerValueGetterContainer m_playerValue; // enum in m_playerValue.m_playerStat
     public bool m_isEqual, m_isLower;
     public int m_value;
 
@@ -17,7 +17,7 @@ namespace Gameplay.Data
     public ICondition GetCondition()
     {
       if( _condition == null )
-        _condition = new MapNodeCondition<int>();
+        _condition = new MapNodeCondition<int>(m_value,m_isEqual,m_isLower,m_playerValue.GetStatGetter());
       return _condition;
     }
   }
