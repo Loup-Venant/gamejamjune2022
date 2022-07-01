@@ -29,7 +29,7 @@ namespace Gameplay.Runtime
       }
       public void EndOfNodeHitByPlayer(Player m_player)
       {
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 15f);
       }
 
       #endregion

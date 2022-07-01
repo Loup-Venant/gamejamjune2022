@@ -31,7 +31,13 @@ namespace Gameplay.Runtime
     private void Initialize()
     {
       _elapsedTime = 0f;
-      _currentMapEntityIndex = 0;
+      _currentMapEntityIndex = -3;
+      _currentMapEntityIndexContainer.m_value = _currentMapEntityIndex;
+    }
+    private void ResetAfterNextNode()
+    {
+      _elapsedTime = 0f;
+      _currentMapEntityIndex = -4;
       _currentMapEntityIndexContainer.m_value = _currentMapEntityIndex;
     }
 
@@ -43,24 +49,32 @@ namespace Gameplay.Runtime
 
     private void GetInput()
     {
-      if (_currentMapEntityIndex >= _map.GetCurrentNode().m_endOfNodeEntity.m_Position)
+      var availableNodes = _map.GetCurrentNode().GetAvailableNodes();
+      var currentEndOfNode = _map.GetCurrentNode().m_endOfNodeEntity;
+      if (_currentMapEntityIndex >= currentEndOfNode.m_Position)
       {
-        if (Input.GetButtonDown("Choice1") && _map.GetCurrentNode().GetAvailableNodes().Count == 1)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && availableNodes.Count >= 1)
         {
-          _map.GetCurrentNode().SelectNextNode(0);
+          Debug.Log("Up");
+          ResetAfterNextNode();
+          _map.SetNode(availableNodes[0]);
         }
-        if (Input.GetButtonDown("Choice2") && _map.GetCurrentNode().GetAvailableNodes().Count == 2)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && availableNodes.Count >= 2)
         {
-          _map.GetCurrentNode().SelectNextNode(1);
+          ResetAfterNextNode();
+          _map.SetNode(availableNodes[1]);
         }
-        if (Input.GetButtonDown("Choice3") && _map.GetCurrentNode().GetAvailableNodes().Count == 3)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && availableNodes.Count >= 3)
         {
-          _map.GetCurrentNode().SelectNextNode(2);
+          ResetAfterNextNode();
+          _map.SetNode(availableNodes[2]);
         }
-        if (Input.GetButtonDown("Choice4") && _map.GetCurrentNode().GetAvailableNodes().Count == 1)
+        if (Input.GetKeyDown(KeyCode.DownArrow) && availableNodes.Count >= 4)
         {
-          _map.GetCurrentNode().SelectNextNode(3);
+          ResetAfterNextNode();
+          _map.SetNode(availableNodes[3]);
         }
+        Debug.Log(_map.GetCurrentNode().GetChoiceText());
       }
 
     }

@@ -11,6 +11,8 @@ namespace Gameplay.Runtime
   {
     [Header("Dev DEBUG")]
     public TextMeshPro[] m_choices;
+    public Color[] m_colors = new Color[4];
+    private string[] _arrows = new string[4] { "↑", "←", "→", "↓" };
 
     private void Awake()
     {
@@ -23,7 +25,15 @@ namespace Gameplay.Runtime
       {
         if(i < mapNodes.Count)
         {
-          m_choices[i].text = mapNodes[i].GetChoiceText();
+          if(i % 2 == 0)
+          {
+            m_choices[i].text = _arrows[i] + " "  + mapNodes[i].GetChoiceText();
+          }
+          else
+          {
+            m_choices[i].text = mapNodes[i].GetChoiceText() + " " + _arrows[i];
+          }
+          m_choices[i].color = m_colors[i];
         }
         else
         {

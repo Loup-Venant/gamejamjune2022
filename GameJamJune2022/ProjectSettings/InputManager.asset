@@ -41,8 +41,8 @@ InputManager:
     m_Name: Choice1
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: up
-    positiveButton: 
+    negativeButton: 
+    positiveButton: up
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
