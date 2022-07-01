@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce18d95301fc50d469cb52c3ae56dbd7, type: 3}
+  m_Name: Contourner
+  m_EditorClassIdentifier: 
+  m_ChoiceName: 
+  m_nextNodes:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: c31be212e6daba5458a18a018c972189, type: 2}
+  m_conditions: []
+  m_endNode: {fileID: 11400000, guid: 28e10d592cd282c488b0c878d9e0d749, type: 2}
+  m_interactables: {fileID: 0}
+  m_WastedTime: 0

@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e307491c92f1647af4c454dbc89f3c, type: 3}
-  m_Name: Temple
+  m_Script: {fileID: 11500000, guid: 3de8b745899b21c4c934819163c7008d, type: 3}
+  m_Name: PlayerGod
   m_EditorClassIdentifier: 
-  m_name: Temple
-  m_position: 15
+  m_playerValue: {fileID: 11400000, guid: dd672416f78185643841252e31a28e85, type: 2}
+  m_isEqual: 1
+  m_isLower: 0
+  m_value: 5
