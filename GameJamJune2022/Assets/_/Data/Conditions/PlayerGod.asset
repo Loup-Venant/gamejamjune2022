@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de8b745899b21c4c934819163c7008d, type: 3}
+  m_Name: PlayerGod
+  m_EditorClassIdentifier: 
+  m_playerValue: {fileID: 11400000, guid: dd672416f78185643841252e31a28e85, type: 2}
+  m_isEqual: 1
+  m_isLower: 0
+  m_value: 5

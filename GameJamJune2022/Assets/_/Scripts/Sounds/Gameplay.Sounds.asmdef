@@ -1,0 +1,14 @@
+{
+    "name": "Gameplay.Sounds",
+    "rootNamespace": "Gameplay.Sounds",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Gameplay.Logic;
+using Gameplay.Sounds;
 using Gameplay.Data;
 
 namespace Gameplay.Runtime
@@ -35,6 +36,7 @@ namespace Gameplay.Runtime
     {
       m_player = new Player();
       _player.m_player = m_player;
+            _soundPlayer = GetComponent<SoundPlayer>();
 
       _rigidbody = GetComponent<Rigidbody2D>();
       _renderer = GetComponent<SpriteRenderer>();
@@ -57,6 +59,18 @@ namespace Gameplay.Runtime
     {
       var temp = other.GetComponent<MapEntityBehaviour>();
       temp.HitByPlayer(m_player);
+       if(temp.m_mapEntity.GetName().Contains("tem"))
+       {
+           _soundPlayer.PlayTotem();
+       }  
+       if(temp.m_mapEntity.GetName().Contains("nemy"))
+       {
+           _soundPlayer.PlayEnemy();
+       }  
+       if(temp.m_mapEntity.GetName().Contains("racte"))
+       {
+           _soundPlayer.PlayAztek();
+       }
     }
 
 
@@ -100,6 +114,7 @@ namespace Gameplay.Runtime
 
     private Rigidbody2D _rigidbody;
     private Vector2 _direction;
+        private SoundPlayer _soundPlayer;
 
     private SpriteRenderer _renderer;
 
