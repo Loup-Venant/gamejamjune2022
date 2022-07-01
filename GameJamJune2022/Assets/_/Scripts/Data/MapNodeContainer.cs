@@ -11,7 +11,7 @@ namespace Gameplay.Data
   {
     private MapNode m_Node;
 
-    public string m_haiku;
+    public string m_ChoiceName;
     public List<MapNodeContainer> m_nextNodes = new List<MapNodeContainer>();
     public List<ConditionContainer> m_conditions = new List<ConditionContainer>();
     public EndNodeContainer m_endNode;
@@ -23,7 +23,7 @@ namespace Gameplay.Data
     {
       if (m_Node == null)
       {
-        m_Node = new MapNode(m_endNode.GetEntity(), m_interactables.GetEntities(), m_conditions.Select(c => c.GetCondition()).ToList()){m_WastedTime = m_WastedTime};
+        m_Node = new MapNode(m_endNode.GetEntity(), m_interactables.GetEntities(), m_conditions.Select(c => c.GetCondition()).ToList()){m_ChoiceName = m_ChoiceName, m_WastedTime = m_WastedTime};
         foreach(var n in m_nextNodes)
         {
           AddNode(n);

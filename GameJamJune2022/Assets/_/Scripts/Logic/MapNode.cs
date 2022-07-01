@@ -10,7 +10,7 @@ namespace Gameplay.Logic
     private List<ICondition> _availabilityConditions;
     public EndNodeEntity m_endOfNodeEntity;
     private List<MapNode> m_NextNodes;
-    public string m_haikuPart = "";
+    public string m_ChoiceName = "";
     public int m_WastedTime;
     public MapNode(EndNodeEntity endNode) : this(endNode, new List<InteractableMapEntity>(), new List<ICondition>())
     {
@@ -19,7 +19,7 @@ namespace Gameplay.Logic
 
     public string GetChoiceText()
     {
-      throw new NotImplementedException();
+      return m_ChoiceName;
     }
 
     public MapNode(EndNodeEntity endNode, List<InteractableMapEntity> entities) : this(endNode, entities, new List<ICondition>())

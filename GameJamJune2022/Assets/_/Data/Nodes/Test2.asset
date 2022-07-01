@@ -10,13 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce18d95301fc50d469cb52c3ae56dbd7, type: 3}
-  m_Name: FirstNode
+  m_Name: Test2
   m_EditorClassIdentifier: 
-  m_ChoiceName: 
+  m_ChoiceName: Save
   m_nextNodes:
-  - {fileID: 11400000, guid: ec04506280e623a4a82835bb1e7c2b02, type: 2}
-  - {fileID: 11400000, guid: 5e727a4db5a059e45a30fab2198a9b53, type: 2}
-  - {fileID: 11400000, guid: 9e812469d681396419fad7faf8562c8b, type: 2}
+  - {fileID: 11400000, guid: 03853505224c012498b67ca7e76a4b02, type: 2}
   m_conditions: []
   m_endNode: {fileID: 11400000, guid: 63c1db4c38acf694abd764fbd763f14e, type: 2}
   m_interactables: {fileID: 11400000, guid: d522dbefcd35d284cbfb7bec3ce4d761, type: 2}

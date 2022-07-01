@@ -12,7 +12,7 @@ namespace Gameplay.Runtime
     [Header("Dev DEBUG")]
     public TextMeshProUGUI[] m_choices;
 
-    internal void SetChoices(List<MapNode> mapNodes)
+    internal void SetUITextChoices(List<MapNode> mapNodes)
     {
       for(int i = 0; i < m_choices.Length; i++)
       {
@@ -20,6 +20,7 @@ namespace Gameplay.Runtime
         {
           m_choices[i].text = mapNodes[i].GetChoiceText();
         }
+
       }
     }
   }

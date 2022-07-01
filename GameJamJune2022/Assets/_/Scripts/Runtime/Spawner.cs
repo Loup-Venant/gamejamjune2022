@@ -77,7 +77,7 @@ namespace Gameplay.Runtime
     private void SpawnEndNode(EndNodeEntity endNodeEntity)
     {
       var endOfNodeEntity = Instantiate(Resources.Load<GameObject>("Prefabs/EndNodes/" + endNodeEntity.GetName()), _spawnPositions[1].position, Quaternion.identity);
-      endOfNodeEntity.GetComponent<EndOfNode>().SetChoices(_map.GetCurrentNode().GetAvailableNodes());
+      endOfNodeEntity.GetComponent<EndOfNode>().SetUITextChoices(_map.GetCurrentNode().GetAvailableNodes());
       //add choice
     }
 
