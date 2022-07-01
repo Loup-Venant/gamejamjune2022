@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b252deaa5724a4e8bed354b393c6e6, type: 3}
+  m_Name: Haiku3
+  m_EditorClassIdentifier: 
+  HaikuParts:
+  - Eagle and jaguar,\n Warriors and claws,\n Fire and blood.
+  - 'Sign of the gods,\n Eagle and snakes,\n A city to build. '
+  - 'Lost in green hell,\n Jungle and pest,\n Spears and swords. '
+  - 'They came on their monsters,\n with shining clothes,\n and their firesticks. '
+  - 'O Sun, source of life,\n This blood is offered to you,\n Protect us from Night. '
+  HaikuEndWin: 
+  HaikuEndLoss: 
+  randomPart: []

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b252deaa5724a4e8bed354b393c6e6, type: 3}
+  m_Name: Haiku2
+  m_EditorClassIdentifier: 
+  HaikuParts:
+  - 'I summon thee, Huitzilopochtli. \nThe Hummingbird of the South,  '
+  - "\xD4 Great God of War and Destruction  \\nCome and tear the flesh of the foreign, 
+    \\nWho came to tear the flesh of our beloved  "
+  - 'I call to you, Huitzilopochtli,  \nFor the bell of battle has rung. '
+  HaikuEndWin: And united, we will rise.
+  HaikuEndLoss: 'And revenge will come, from above or from below '
+  randomPart:
+  - 'I offer thou my soul and prayers '
+  - 'I run toward thou with an aching heart \nFor I am the Great God of Grief '
