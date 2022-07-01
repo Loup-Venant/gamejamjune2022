@@ -16,13 +16,14 @@ namespace Gameplay.Data
     public List<ConditionContainer> m_conditions = new List<ConditionContainer>();
     public EndNodeContainer m_endNode;
     public TrackContainer m_interactables;
+    public int m_WastedTime;
 
 
     public MapNode GetNode()
     {
       if (m_Node == null)
       {
-        m_Node = new MapNode(m_endNode.GetEntity(), m_interactables.GetEntities(), m_conditions.Select(c => c.GetCondition()).ToList());
+        m_Node = new MapNode(m_endNode.GetEntity(), m_interactables.GetEntities(), m_conditions.Select(c => c.GetCondition()).ToList()){m_WastedTime = m_WastedTime};
         foreach(var n in m_nextNodes)
         {
           AddNode(n);

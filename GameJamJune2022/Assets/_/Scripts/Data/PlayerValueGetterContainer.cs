@@ -2,16 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Gameplay.Logic;
 
 namespace Gameplay.Data
 {
-  public enum PlayerStat
-  {
-    Money,
-    Fame,
-    GodFavor,
-    Time
-  }
+  
   [CreateAssetMenu(menuName ="Gameplay/PlayerStatGetter")]
   public class PlayerValueGetterContainer : ScriptableObject
   {

@@ -51,6 +51,11 @@ namespace Gameplay.Runtime
         _elapsedTime = 0f;
         _currentMapEntityIndex++;
         _currentMapEntityIndexContainer.m_value = _currentMapEntityIndex;
+
+        if(_currentMapEntityIndex >= _map.GetCurrentNode().m_endOfNodeEntity.m_Position)
+        {
+          SpawnEndNode(_map.GetCurrentNode().m_endOfNodeEntity);
+        }
         Spawn();
       }
     }
@@ -68,6 +73,12 @@ namespace Gameplay.Runtime
           mapEntity.GetComponent<MapEntityBehaviour>().SetMapEntity(mapEntities[i]);
         }
       }
+    }
+    private void SpawnEndNode(EndNodeEntity endNodeEntity)
+    {
+      var endOfNodeEntity = Instantiate(Resources.Load<GameObject>("Prefabs/EndNodes/" + endNodeEntity.GetName()), _spawnPositions[1].position, Quaternion.identity);
+      endOfNodeEntity.GetComponent<EndOfNode>().SetChoices(_map.GetCurrentNode().GetAvailableNodes());
+      //add choice
     }
 
     #endregion
