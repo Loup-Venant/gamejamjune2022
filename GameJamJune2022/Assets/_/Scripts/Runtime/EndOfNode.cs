@@ -10,7 +10,12 @@ namespace Gameplay.Runtime
   public class EndOfNode : MonoBehaviour
   {
     [Header("Dev DEBUG")]
-    public TextMeshProUGUI[] m_choices;
+    public TextMeshPro[] m_choices;
+
+    private void Awake()
+    {
+      m_choices = GetComponentsInChildren<TextMeshPro>();
+    }
 
     internal void SetUITextChoices(List<MapNode> mapNodes)
     {

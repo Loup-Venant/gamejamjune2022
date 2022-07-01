@@ -86,12 +86,7 @@ namespace Gameplay.Runtime
         m_player.ChangeStance();
         ChangeSprite();
       }
-      var horizontalChoice = Input.GetAxisRaw("HorizontalChoice");
-      var verticalVhoice = Input.GetAxisRaw("VerticalChoice");
-      if(horizontalChoice != 0 || verticalVhoice != 0)
-      {
-        
-      }
+      
     }
 
     private void ChangeSprite()
