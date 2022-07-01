@@ -43,21 +43,21 @@ namespace Gameplay.Runtime
 
     private void GetInput()
     {
-      if (_currentMapEntityIndex == _map.GetCurrentNode().m_endOfNodeEntity.m_Position)
+      if (_currentMapEntityIndex >= _map.GetCurrentNode().m_endOfNodeEntity.m_Position)
       {
-        if (Input.GetButtonDown("Choice1"))
+        if (Input.GetButtonDown("Choice1") && _map.GetCurrentNode().GetAvailableNodes().Count == 1)
         {
           _map.GetCurrentNode().SelectNextNode(0);
         }
-        if (Input.GetButtonDown("Choice2"))
+        if (Input.GetButtonDown("Choice2") && _map.GetCurrentNode().GetAvailableNodes().Count == 2)
         {
           _map.GetCurrentNode().SelectNextNode(1);
         }
-        if (Input.GetButtonDown("Choice3"))
+        if (Input.GetButtonDown("Choice3") && _map.GetCurrentNode().GetAvailableNodes().Count == 3)
         {
           _map.GetCurrentNode().SelectNextNode(2);
         }
-        if (Input.GetButtonDown("Choice4"))
+        if (Input.GetButtonDown("Choice4") && _map.GetCurrentNode().GetAvailableNodes().Count == 1)
         {
           _map.GetCurrentNode().SelectNextNode(3);
         }
