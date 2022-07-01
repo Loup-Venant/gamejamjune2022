@@ -5,6 +5,7 @@ using Gameplay.Logic;
 
 namespace Gameplay.Runtime
 {
+ 
     public class MapEntityBehaviour : MonoBehaviour
     {
       #region Exposed
