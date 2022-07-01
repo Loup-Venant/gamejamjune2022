@@ -38,6 +38,8 @@ namespace Gameplay.Runtime
 
       _rigidbody = GetComponent<Rigidbody2D>();
       _renderer = GetComponent<SpriteRenderer>();
+      m_player.ChangeStance();
+      ChangeSprite();
     }
 
     private void Update()

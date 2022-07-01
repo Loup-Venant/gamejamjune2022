@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Gameplay.Logic;
 using Gameplay.Data;
+using Gameplay.Logic;
+using UnityEngine;
 
 namespace Gameplay.Runtime
 {
@@ -17,8 +14,6 @@ namespace Gameplay.Runtime
     [Header("Dev DEBUG")]
     [SerializeField] private Transform[] _spawnPositions;
     [SerializeField] private IntValue _currentMapEntityIndexContainer;
-
-
 
     #endregion
 
