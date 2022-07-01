@@ -22,13 +22,15 @@ namespace Gameplay.Runtime
         m_mapEntity = mapEntity;
       }
 
-      public void HitByPlayer(Player m_player)
+      public void InteractableHitByPlayer(Player m_player)
       {
         m_mapEntity.Choose(m_player, m_player.m_IsPassive);
-
         
         Destroy(gameObject, .1f);
-        
+      }
+      public void EndOfNodeHitByPlayer(Player m_player)
+      {
+        Destroy(gameObject, 15f);
       }
 
       #endregion

@@ -207,7 +207,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: -1.17}
+  m_AnchoredPosition: {x: -6.6, y: -1.17}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4216457742530351927
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -414,7 +414,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.98, y: -2.2}
+  m_AnchoredPosition: {x: -6.6, y: -2.2}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1099015826514904673
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -736,9 +736,10 @@ GameObject:
   - component: {fileID: -6789693419547883451}
   - component: {fileID: -1268583472016644814}
   - component: {fileID: 1064232499082727105}
+  - component: {fileID: 1072346409593261090}
   m_Layer: 0
   m_Name: Temple
-  m_TagString: Untagged
+  m_TagString: EndOfNode
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -864,3 +865,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_choices: []
+  m_colors:
+  - {r: 0.8490566, g: 0.22828408, b: 0.22828408, a: 1}
+  - {r: 0.3846181, g: 0.8301887, b: 0, a: 1}
+  - {r: 0.22841759, g: 0.447642, b: 0.8207547, a: 1}
+  - {r: 0.9056604, g: 0.80920255, b: 0.14951938, a: 1}
+--- !u!114 &1072346409593261090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755424217350166200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8180ff3fe169c854f837d3b808bfecf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

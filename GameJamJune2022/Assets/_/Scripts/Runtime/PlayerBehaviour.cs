@@ -57,6 +57,7 @@ namespace Gameplay.Runtime
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+<<<<<<< HEAD
       var temp = other.GetComponent<MapEntityBehaviour>();
       temp.HitByPlayer(m_player);
        if(temp.m_mapEntity.GetName().Contains("tem"))
@@ -71,6 +72,16 @@ namespace Gameplay.Runtime
        {
            _soundPlayer.PlayAztek();
        }
+=======
+      if(other.tag == "Interactable")
+      {
+        other.GetComponent<MapEntityBehaviour>().InteractableHitByPlayer(m_player);
+      }
+      else if(other.tag == "EndOfNode")
+      {
+        other.GetComponent<MapEntityBehaviour>().EndOfNodeHitByPlayer(m_player);
+      }
+>>>>>>> b821c50dac414e5a6d55a4c57f2186d24fb6a052
     }
 
 
