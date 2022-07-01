@@ -208,7 +208,7 @@ MonoBehaviour:
   - {fileID: 2048609851}
   - {fileID: 291099472}
   - {fileID: 50794508}
-  _currentMapEntityIndexContainer: {fileID: 0}
+  _currentMapEntityIndexContainer: {fileID: 11400000, guid: 92e0d9ce5b4b07f48b0c7025ee88f98e, type: 2}
 --- !u!114 &99526021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +315,14 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 11400000, guid: edc31d34c679eba4e9260ae36ef369b1, type: 2}
+    - target: {fileID: -733945026225242367, guid: 6bfaa9643889f5842be523e52324821c, type: 3}
+      propertyPath: _maskIdle
+      value: 
+      objectReference: {fileID: 21300000, guid: 52ab8dd3c6cfb214c8ee37e9e3d99110, type: 3}
+    - target: {fileID: -733945026225242367, guid: 6bfaa9643889f5842be523e52324821c, type: 3}
+      propertyPath: _maskAngry
+      value: 
+      objectReference: {fileID: 21300000, guid: 6c910584536c25544a9e0d4ed2ca9118, type: 3}
     - target: {fileID: 800168386974747239, guid: 6bfaa9643889f5842be523e52324821c, type: 3}
       propertyPath: m_RootOrder
       value: 1

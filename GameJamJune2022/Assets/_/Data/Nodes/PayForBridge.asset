@@ -20,5 +20,5 @@ MonoBehaviour:
   m_conditions:
   - {fileID: 11400000, guid: c22d76a1773a8834da930d6f220ee7ca, type: 2}
   m_endNode: {fileID: 11400000, guid: 809e61019e75e7f4883051eb9bbbacd4, type: 2}
-  m_interactables: {fileID: 0}
+  m_interactables: {fileID: 11400000, guid: d522dbefcd35d284cbfb7bec3ce4d761, type: 2}
   m_WastedTime: 5
