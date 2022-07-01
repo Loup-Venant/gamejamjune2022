@@ -25,6 +25,10 @@ namespace Gameplay.Runtime
         {
           m_choices[i].text = mapNodes[i].GetChoiceText();
         }
+        else
+        {
+          m_choices[i].text = "";
+        }
 
       }
     }

@@ -55,8 +55,14 @@ namespace Gameplay.Runtime
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-      var temp = other.GetComponent<MapEntityBehaviour>();
-      temp.HitByPlayer(m_player);
+      if(other.tag == "Interactable")
+      {
+        other.GetComponent<MapEntityBehaviour>().InteractableHitByPlayer(m_player);
+      }
+      else if(other.tag == "EndOfNode")
+      {
+        other.GetComponent<MapEntityBehaviour>().EndOfNodeHitByPlayer(m_player);
+      }
     }
 
 
