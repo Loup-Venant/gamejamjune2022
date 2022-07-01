@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Test1
   m_EditorClassIdentifier: 
   m_ChoiceName: Kill
-  m_nextNodes:
-  - {fileID: 0}
+  m_nextNodes: []
   m_conditions:
   - {fileID: 11400000, guid: d5b1cdf18411e2f4ebfa86609cd697d7, type: 2}
   m_endNode: {fileID: 11400000, guid: 63c1db4c38acf694abd764fbd763f14e, type: 2}
-  m_interactables: {fileID: 11400000, guid: d522dbefcd35d284cbfb7bec3ce4d761, type: 2}
+  m_interactables: {fileID: 11400000, guid: 7da183534d60c34458f140de814ecd0e, type: 2}
   m_WastedTime: 0
