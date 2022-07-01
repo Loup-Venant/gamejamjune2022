@@ -17,14 +17,12 @@ namespace Gameplay.Logic
     public Map(MapNode firstNode) : this()
     {
       _firstNode = firstNode;
-      PopulateMap(_firstNode);
       StartGame();
     }
 
     public Map(List<InteractableMapEntity> allEntities) : this()
     {
       _firstNode = new MapNode(new EndNodeEntity("temple", 50), allEntities);
-      PopulateMap(_firstNode);
       StartGame();
     }
     public Map()
@@ -42,7 +40,7 @@ namespace Gameplay.Logic
     #endregion
     private void StartGame()
     {
-      _currentNode = _firstNode;
+      SetNode(_firstNode);
     }
 
     #region Getters
@@ -51,25 +49,19 @@ namespace Gameplay.Logic
     { return _firstNode; }
     public MapNode GetCurrentNode()
     { return _currentNode; }
+    public void SetNode(MapNode node)
+    {
+      _currentNode = node;
+      PopulateMap();
+    }
     public InteractableMapEntity[] GetEntitiesAtPosition(int position)
     {
       var retVal = new InteractableMapEntity[NumberOfLanes];
 
-      if (_currentNode.m_endOfNodeEntity.m_Position == position)
+      for (int i = 0; i < NumberOfLanes; i++)
       {
-        for (int i = 0; i < NumberOfLanes; i++)
-        {
-          //if (m_Lanes[i].ContainsKey(position))
-          //retVal[i] = _currentNode.m_endOfNodeEntity;
-        }
-      }
-      else
-      {
-        for (int i = 0; i < NumberOfLanes; i++)
-        {
-          if (m_Lanes[i].ContainsKey(position))
-            retVal[i] = m_Lanes[i][position];
-        }
+        if (m_Lanes[i].ContainsKey(position))
+          retVal[i] = m_Lanes[i][position];
       }
       return retVal;
     }
@@ -78,10 +70,14 @@ namespace Gameplay.Logic
 
     #region Add content
 
-    public void PopulateMap(MapNode node)
+    public void PopulateMap()
     {
-      var temp = node.GetEntities();
-      AddEntities(node.GetEntities());
+      foreach (var d in m_Lanes)
+      {
+        d.Clear();
+      }
+      var temp = _currentNode.GetEntities();
+      AddEntities(_currentNode.GetEntities());
     }
     public void AddEntities(List<InteractableMapEntity> entities)
     {
