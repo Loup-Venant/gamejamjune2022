@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce18d95301fc50d469cb52c3ae56dbd7, type: 3}
   m_Name: PrayAtTheTemple
   m_EditorClassIdentifier: 
-  m_ChoiceName: 
-  m_nextNodes: []
+  m_ChoiceName: Pray
+  m_nextNodes:
+  - {fileID: 11400000, guid: 67baffb5620ac224abaa520a21b07f9b, type: 2}
+  - {fileID: 11400000, guid: b5084a69564de4c42805801d7783200d, type: 2}
   m_conditions:
   - {fileID: 11400000, guid: d5b1cdf18411e2f4ebfa86609cd697d7, type: 2}
-  m_endNode: {fileID: 11400000, guid: 28e10d592cd282c488b0c878d9e0d749, type: 2}
+  m_endNode: {fileID: 11400000, guid: 462a124e013116145bfb88c5ac19079d, type: 2}
   m_interactables: {fileID: 11400000, guid: d522dbefcd35d284cbfb7bec3ce4d761, type: 2}
   m_WastedTime: 15

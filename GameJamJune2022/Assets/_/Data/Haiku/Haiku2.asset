@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Haiku2
   m_EditorClassIdentifier: 
   HaikuParts:
-  - 'I summon thee, Huitzilopochtli. \nThe Hummingbird of the South,  '
-  - "\xD4 Great God of War and Destruction  \\nCome and tear the flesh of the foreign, 
-    \\nWho came to tear the flesh of our beloved  "
-  - 'I call to you, Huitzilopochtli,  \nFor the bell of battle has rung. '
+  - 'I summon thee, Huitzilopochtli. $The Hummingbird of the South,  '
+  - "\xD4 Great God of War and Destruction  $Come and tear the flesh of the foreign,
+    $Who came to tear the flesh of our beloved  "
+  - 'I call to you, Huitzilopochtli,  $For the bell of battle has rung. '
   HaikuEndWin: And united, we will rise.
   HaikuEndLoss: 'And revenge will come, from above or from below '
   randomPart:
   - 'I offer thou my soul and prayers '
-  - 'I run toward thou with an aching heart \nFor I am the Great God of Grief '
+  - 'I run toward thou with an aching heart $For I am the Great God of Grief '

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce18d95301fc50d469cb52c3ae56dbd7, type: 3}
   m_Name: PayForBridge
   m_EditorClassIdentifier: 
-  m_ChoiceName: 
+  m_ChoiceName: Pay
   m_nextNodes:
   - {fileID: 11400000, guid: 2436f15c3c865da4aaf8d8bcd48e3d39, type: 2}
   - {fileID: 11400000, guid: 034773d6ba6791644a8ec8c06a0cf211, type: 2}

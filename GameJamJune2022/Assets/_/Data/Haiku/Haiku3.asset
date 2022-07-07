@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Haiku3
   m_EditorClassIdentifier: 
   HaikuParts:
-  - Eagle and jaguar,\n Warriors and claws,\n Fire and blood.
-  - 'Sign of the gods,\n Eagle and snakes,\n A city to build. '
-  - 'Lost in green hell,\n Jungle and pest,\n Spears and swords. '
-  - 'They came on their monsters,\n with shining clothes,\n and their firesticks. '
-  - 'O Sun, source of life,\n This blood is offered to you,\n Protect us from Night. '
+  - Eagle and jaguar,$Warriors and claws,$Fire and blood.
+  - 'Sign of the gods,$Eagle and snakes,$A city to build. '
+  - 'Lost in green hell,$Jungle and pest,$Spears and swords. '
+  - 'They came on their monsters,$with shining clothes,$and their firesticks. '
+  - 'O Sun, source of life,$This blood is offered to you,$Protect us from Night. '
   HaikuEndWin: 
   HaikuEndLoss: 
   randomPart: []

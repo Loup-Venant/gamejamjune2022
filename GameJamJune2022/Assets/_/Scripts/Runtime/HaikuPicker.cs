@@ -17,7 +17,9 @@ namespace Gameplay.Runtime
     private void Start()
     {
       var tmp = GetComponent<TextMeshProUGUI>();
-      tmp.text = GetHaiku(true) +"\n\n\n" + tmp.text;
+      var haiku = GetHaiku(true);
+      var temp = haiku.Replace('$', '\n');
+      tmp.text = temp + "\n\n\n" + tmp.text;
       //Debug.Log(GetHaiku(true));
       //Debug.Log(GetHaiku(true));
       //Debug.Log(GetHaiku(true));
